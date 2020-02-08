@@ -10,12 +10,20 @@
     margin: auto;
     font-size: 2rem;
 }
+.enemy{
+    position:absolute;
+    background-color: red;
+    bottom: 100px;
+    width: 100px;
+    height: 150px;
+    margin: auto;
+}
 .gameArea{
     background-color: black;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     margin: auto;
 }
 .startScreen{
