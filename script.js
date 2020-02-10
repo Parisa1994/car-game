@@ -17,7 +17,6 @@ document.addEventListener("keyup", pressOff);
 function moveLines(){
     let lines = document.querySelectorAll(".line");
     lines.forEach(function(item){
-        console.log(item.y);
         if(item.y>1500){
             item.y -= 1500;
         }
@@ -26,7 +25,6 @@ function moveLines(){
     });
 }
 function playGame(){
-    console.log("inplay");
     let car = document.querySelector(".car");
     moveLines();
     moveEnemy(car);
@@ -42,7 +40,6 @@ function playGame(){
         score.innerText = "Score: "+player.score;
     }
 }
-
 function isCollide(a, b){
     let aRect = a.getBoundingClientRect();
     let bRect = b.getBoundingClientRect();
@@ -53,12 +50,10 @@ function isCollide(a, b){
         (aRect.left > bRect.right)
     )
 }
-
 function moveEnemy(car){
     let ele = document.querySelectorAll(".enemy");
     ele.forEach(function(item){
         if(isCollide(car, item)){
-            console.log("HIT");
             endGame();
         }
         if(item.y>1500){
@@ -72,21 +67,19 @@ function moveEnemy(car){
 function pressOn(e){
     e.preventDefault();
     keys[e.key] = true;
-    console.log(keys);
 }
 function pressOff(e){
     e.preventDefault();
     keys[e.key] = false;
-    console.log(keys);
 }
 function endGame(){
     player.start = false;
     score.innerHTML = "GameOver <br/> Score was :"+player.score;
     startScreen.classList.remove("hide");
 }
+
 function start(){
     startScreen.classList.add("hide");
-    // gameArea.classList.remove("hide");
     gameArea.innerHTML = "" ;
     player.start = true;
     player.score = 0;
@@ -99,7 +92,6 @@ function start(){
     }
     window.requestAnimationFrame(playGame);
     let car = document.createElement("div");
-    //car.innerText = "car";
     car.setAttribute("class", "car");
     gameArea.appendChild(car);
     player.x = car.offsetLeft;
