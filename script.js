@@ -99,7 +99,7 @@ function start(){
     }
     window.requestAnimationFrame(playGame);
     let car = document.createElement("div");
-    car.innerText = "car";
+    //car.innerText = "car";
     car.setAttribute("class", "car");
     gameArea.appendChild(car);
     player.x = car.offsetLeft;

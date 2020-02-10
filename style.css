@@ -17,6 +17,9 @@
     width: 100px;
     height: 150px;
     margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    
 }
 .gameArea{
     background-color: black;
